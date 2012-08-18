@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+
+<meta content="HTML5, HTML5ICE, HTML5 ICE, ICE,  Innovative Coded Examples" name="keywords" />
+
+<meta content="HTML5 ICE is a project that will bring coded html5 examples. A HTML5 Lab" name="description" />
+
+  <title>HTML5ICE</title>
+
+
+<script type="text/javascript" src="libraries/jquery.min.js"></script>
+
+<script type="text/javascript" src="libraries/window.js"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29673873-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+<body>
+
+<div class="container_top">
+<div class="container_top_logo"><img class="logo" width="100px" height="100px" alt="HTML5ICE LOGO" src="images/logo.png"/></div>
+
+<div class="container_top_text">
+<div id="thelab">THE</div> HTML5 ICE<div id="thelab"> LAB </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+</script>
+
+</div>
+<div class="container_one">
+
+
+<div class="container_one_left">
+<div class="container_left_top">
+
+
+<nav class="nav_bar">
+<ul>
+<li><a class="menu" target="_top" href="index.html">Home</a></li>
+<li><a class="menu" target="_top" href="labhome.html">Lab</a></li>
+<li><a class="menu"  onclick="Show_Popup();">Contact Us</a></li>
+
+</ul>
+</nav>
+
+</div>
+
+
+
+
+
+
+</div>
+<div class="container_one_right_dd">
+<h1>
+&#60;canvas&#62;
+</h1>
+<div class="container_one_right_Exp">
+The HTML5 spec defines The canvas element provides scripts with a resolution-dependent bitmap canvas, which can be used for rendering graphs, game graphics, or other visual images on the fly.
+</br>
+Below are two canvas examples the first on the left uses "lineTo(x,y)" and "moveTo(x,y)" to draw a line between two points and the second on the right uses "arc(x,y,radius,DrawAngleStart,DrawAngleEnd,Clockwise-TrueorFalse)" to draw a circle.
+</div>
+</div>
+
+
+</div>
+<div class="container_third">
+<div class="container_third_one">
+				<canvas id="canvas_container" style=" width:100%;height:100px;"></canvas>
+	
+</div>
+
+<div class="container_third_two" style="border-style:solid;">
+<canvas id="canvas_container_right" style=" width:100%;height:100px;"></canvas>
+</div>
+<script type="text/javascript">
+
+  
+
+
+var canvas = document.getElementById("canvas_container");
+var ctx=canvas.getContext("2d");
+ctx.strokeStyle="#FF0000";
+ctx.lineWidth=2.5;
+
+ctx.moveTo(30,28);
+ctx.lineTo(30,100);
+ctx.moveTo(30,64);
+ctx.lineTo(50,64);
+ctx.moveTo(50,28);
+ctx.lineTo(50,100);
+ctx.moveTo(60,28);
+ctx.lineTo(90,28);
+ctx.moveTo(75,28);
+ctx.lineTo(75,100);
+ctx.moveTo(95,100);
+ctx.lineTo(100,28);
+
+ctx.lineTo(110,100);
+ctx.lineTo(120,28);
+ctx.lineTo(130,100);
+ctx.moveTo(140,28);
+ctx.lineTo(140,100);
+ctx.lineTo(160,100);
+
+ctx.moveTo(180,28);
+ctx.lineTo(200,28);
+ctx.moveTo(180,28);
+ctx.lineTo(180,60);
+ctx.lineTo(200,60);
+ctx.lineTo(200,100);
+ctx.lineTo(180,100);
+
+
+
+ctx.stroke();
+
+var cvs=document.getElementById("canvas_container_right");
+var ctx=cvs.getContext("2d");
+ctx.fillStyle="#708090";
+ctx.beginPath();
+//I
+ctx.arc(70,20,6,0,180,true);
+ctx.arc(70,40,6,0,180,true);
+ctx.arc(70,60,6,0,180,true);
+ctx.arc(70,80,6,0,180,true);
+ctx.arc(70,100,6,0,180,true);
+//C
+ctx.arc(120,20,6,0,180,true);
+ctx.arc(110,20,6,0,180,true);
+ctx.arc(100,40,6,0,180,true);
+ctx.arc(100,60,6,0,180,true);
+ctx.arc(100,80,6,0,180,true);
+ctx.arc(110,100,6,0,180,true);
+ctx.arc(120,100,6,0,180,true);
+//E
+ctx.arc(160,20,6,0,180,true);
+ctx.arc(170,20,6,0,180,true);
+ctx.arc(150,20,6,0,180,true);
+ctx.arc(150,40,6,0,180,true);
+ctx.arc(160,60,6,0,180,true);
+ctx.arc(150,60,6,0,180,true);
+ctx.arc(150,80,6,0,180,true);
+ctx.arc(150,100,6,0,180,true);
+ctx.arc(160,100,6,0,180,true);
+ctx.arc(170,100,6,0,180,true);
+ctx.closePath();
+ctx.fill();
+</script>
+</div>
+<div class="container_fourth">
+<div class="container_one_right_Exp">
+<h2>Play with the code</h2>
+Try spelling out your name or drawing a picture. The above example is basic try experimenting and seeing what you come up with.
+<h2>Useful to know</h2>
+To draw a rectangle: "context.rect(x,y,width,height);"
+</br>
+To draw a rectangle with a fill 'color': "context.rect(x,y,width,height);"
+</br>
+To draw a line: "context.lineTo(x,y);"
+</br>
+To draw an arc along a circle "context.arc(x,y,radius,DrawAngleStart,DrawAngleEnd,Clockwise-TrueorFalse)"
+</br>
+To add text to the canvas "context.fillText("text",x,y);"
+</br> 
+There are many other methods to the canvas element so check them out at the <a style="color:#0000ff" href="https://developer.mozilla.org/en/HTML/Canvas">Mozilla Developer Network Site.</a>
+</div>
+
+</div>
+
+<div id="popup" style="display: none;"></div>
+
+<div id="windowl" style="display: none;">
+<div id="popup_content" style="position:absolute;top:0px;right:2px;"onclick="Close_Popup();"><img src="images/xexit.png"/> </div>
+<h1 id="email">Contact Us</h1>
+
+<h2 id="email"><a style="color:blue" href="mailto:hello@html5ice.com">hello@html5ice.com</a></br> or</br> On Twitter <a style="color:blue" href="https://twitter.com/#!/html5ice">@html5ice</a></h2>
+
+</div>
+
+<div class="footerE">
+<footer>&#169;Copyright 2012 HTML5 ICE. <a style="color:blue" target="_top" href="thanks.html">With Thanks To</a></footer>
+
+</div>
+
+
+<script type="text/javascript" src="libraries/window.js"></script>
+
+ <script type="text/javascript" src="libraries/Center.js"></script>
+ 
+</body>
+</html>

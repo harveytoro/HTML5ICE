@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+
+<meta content="HTML5, HTML5ICE, HTML5 ICE, ICE,  Innovative Coded Examples" name="keywords" />
+
+<meta content="HTML5 ICE is a project that will bring coded html5 examples. A HTML5 Lab" name="description" />
+
+  <title>HTML5ICE</title>
+
+
+<script type="text/javascript" src="libraries/jquery.min.js"></script>
+
+<script type="text/javascript" src="libraries/window.js"></script>
+	<script>
+		
+		var dragData;
+		
+		//dragStart: Is called when  a draggable item is started to be dragged
+		function dragStart(event) {
+			event.dataTransfer.effectAllowed = 'move';
+			event.dataTransfer.setData("text");
+			return true;
+		}
+				
+		
+		//dragOver: Is called when the draggable item is over the target dropzone
+		function dragOver(event) {
+			
+			event.preventDefault();
+			
+		}
+		
+		
+		//dragEnd: Is called when the drag is completed
+		function dragEnd(event) {
+			return true;
+		}
+		
+		
+		//dragDrop: Is called when the item being dragged is dropped over the target dropzone
+		function dragDrop(event) {
+			event.preventDefault();
+			dragData = "url(" + event.dataTransfer.getData("text")  + ")";
+			changeBackground();
+			
+		}		
+		
+		//changeBackground: Is called from dragDrop event.
+		// When the pattern is dragged over the dropzone target its location is captured in the variable dragData
+		//dragData is then formated to the css background-image format in the dragDrop event and passed to the function below to change the css background-Image property to the new pattern
+		function changeBackground(){
+		$('body').css("background-image",dragData);
+		}
+	</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29673873-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+
+<div class="container_top">
+<div class="container_top_logo"><img class="logo" width="100px" height="100px" alt="HTML5ICE LOGO" src="images/logo.png"/></div>
+
+<div class="container_top_text">
+<div id="thelab">THE</div> HTML5 ICE<div id="thelab"> LAB </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+</script>
+
+</div>
+<div class="container_one">
+
+
+<div class="container_one_left">
+<div class="container_left_top">
+
+
+<nav class="nav_bar">
+<ul>
+<li><a class="menu" target="_top" href="index.html">Home</a></li>
+<li><a class="menu" target="_top"  href="labhome.html">Lab</a></li>
+<li><a class="menu"  onclick="Show_Popup();">Contact Us</a></li>
+
+</ul>
+</nav>
+
+</div>
+
+
+
+
+
+
+</div>
+<div class="container_one_right_dd">
+<h1  draggable="true">
+&#60;h1 draggable="true"&#62;Drag and Drop&#60;/h1&#62;</h1>
+<div class="container_one_right_Exp">
+The HTML5 spec defines an event-based drag-and-drop mechanism.
+All HTML elements may have the draggable content attribute set and all HTML elements may have the dropzone content attribute set.</br>
+The Example is a set of patterns from subtile Patterns website. Drag a pattern from the left and drop the pattern on the dropzone target which in this case in the word "Background" on the right to change the background pattern of the body.
+</div>
+</div>
+
+</div>
+<div class="container_third">
+<div class="container_third_one">
+				<img  width="100px" height="100px" draggable="true"  ondragstart="return dragStart(event)" ondragend="dragEnd(event)" src="images/light_alu.png" alt="light_alu Pattern" />
+				<img width="100px" height="100px"    draggable="true" ondragstart="return dragStart(event)" ondragend="dragEnd(event)" src="images/brushed_alu_dark.png" alt="brushed_alu_dark Pattern" />
+				<img  width="100px" height="100px"   draggable="true" ondragstart="return dragStart(event)" ondragend="dragEnd(event)" src="images/diagmonds.png" alt="diagmonds Pattern" />
+			    <img  width="100px" height="100px"   draggable="true" ondragstart="return dragStart(event)" ondragend="dragEnd(event)" src="images/batthern.png" alt="batthern Pattern" />
+			    <img width="100px" height="100px"    draggable="true" ondragstart="return dragStart(event)" ondragend="dragEnd(event)" src="images/bright_squares.png" alt="bright_squares Pattern" />
+
+</div>
+
+<div class="container_third_two" ondragover="return dragOver(event)" ondrop="dragDrop(event)">Background</div>
+
+</div>
+<div class="container_fourth">
+<div class="container_one_right_Exp">
+<h2>Play with the code</h2>
+Change the code using the code editor so that the background is changed when the pattern is moved over the targed dropzone and before being dropped.
+</div>
+
+</div>
+
+<div id="popup" style="display: none;"></div>
+
+<div id="windowl" style="display: none;">
+<div id="popup_content" style="position:absolute;top:0px;right:2px;"onclick="Close_Popup();"><img src="images/xexit.png"/> </div>
+<h1 id="email">Contact Us</h1>
+
+<h2 id="email"><a style="color:blue" href="mailto:hello@html5ice.com">hello@html5ice.com</a></br> or</br> On Twitter <a style="color:blue" href="https://twitter.com/#!/html5ice">@html5ice</a></h2>
+
+</div>
+<div class="footerE">
+<footer>&#169;Copyright 2012 HTML5 ICE. <a style="color:blue" target="_top" href="thanks.html">With Thanks To</a></footer>
+
+</div>
+
+
+
+<script type="text/javascript" src="libraries/window.js"></script>
+
+ <script type="text/javascript" src="libraries/Center.js"></script>
+ 
+</body>
+</html>

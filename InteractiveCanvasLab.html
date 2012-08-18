@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+
+<meta content="HTML5, HTML5ICE, HTML5 ICE, ICE,  Innovative Coded Examples" name="keywords" />
+
+<meta content="HTML5 ICE is a project that will bring coded html5 examples. A HTML5 Lab" name="description" />
+
+  <title>HTML5ICE</title>
+
+
+<script type="text/javascript" src="libraries/jquery.min.js"></script>
+
+<script type="text/javascript" src="libraries/window.js"></script>
+
+  <script type="text/javascript" src="libraries/kinetic-v3.7.1.js"></script>
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29673873-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  
+</head>
+<body>
+
+<div class="container_top">
+<div class="container_top_logo"><img class="logo" width="100px" height="100px" alt="HTML5ICE LOGO" src="images/logo.png"/></div>
+
+<div class="container_top_text">
+<div id="thelab">THE</div> HTML5 ICE<div id="thelab"> LAB </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+</script>
+
+</div>
+<div class="container_one">
+
+
+<div class="container_one_left">
+<div class="container_left_top">
+
+
+<nav class="nav_bar">
+<ul>
+<li><a class="menu" target="_top" href="index.html">Home</a></li>
+<li><a class="menu" target="_top" href="labhome.html">Lab</a></li>
+<li><a class="menu"  onclick="Show_Popup();">Contact Us</a></li>
+
+</ul>
+</nav>
+
+</div>
+
+
+
+
+
+
+</div>
+<div class="container_one_right_dd">
+<h1>
+Interactive canvas with Kinectjs</h1>
+<div class="container_one_right_Exp">
+"<a style="color:blue" href="http://www.kineticjs.com/">KineticJS</a> is an HTML5 Canvas JavaScript library that extends the 2d context by enabling canvas interactivity for desktop and mobile applications."
+</br>
+The example below is a simple noughts and crosses game you can drag the noughts or crosses to the position you wish to play double click and there position is then fixed (draggable property is set to false), the example does not tell you which player has won. 
+</div>
+</div>
+
+</div>
+<div class="container_third">
+<h2 class="NoughtsCrosses" style="text-align:center">Noughts and Crosses</h2>
+<div class="container_third_one" id="window" style="height:500px;width:600px;">
+	 <div id="container">
+			
+        </div>
+</div>
+
+
+</div>
+<div class="container_fourth">
+<div class="container_one_right_Exp" style="clear:both;">
+<h2>Play with the code</h2>
+Try turning a game you would normally clase as a paper on pencil game to a mouse on canvas game.
+<h2>Useful to know</h2>
+Visit<a style="color:blue" href="http://www.kineticjs.com/"> kinectjs</a> for the full <a style="color:blue" href="http://www.kineticjs.com/api-docs.php">API Documentation.</a>
+</br>
+</div>
+
+</div>
+
+<div id="popup" style="display: none;"></div>
+
+<div id="windowl" style="display: none;">
+<div id="popup_content" style="position:absolute;top:0px;right:2px;"onclick="Close_Popup();"><img src="images/xexit.png"/> </div>
+<h1 id="email">Contact Us</h1>
+
+<h2 id="email"><a style="color:blue" href="mailto:hello@html5ice.com">hello@html5ice.com</a></br> or</br> On Twitter <a style="color:blue" href="https://twitter.com/#!/html5ice">@html5ice</a></h2>
+
+</div>
+<script>
+
+            window.onload = function(){
+
+                var stage = new Kinetic.Stage("container", 625, 500);
+				
+				var layer = new Kinetic.Layer();
+
+              
+                       
+
+                        var box = new Kinetic.Shape(function(){
+
+                          var context = this.getContext();
+
+							 context.moveTo(150, 150);
+							context.lineTo(450, 150);
+							context.moveTo(150, 250)
+							context.lineTo(450, 250);
+							context.moveTo(250, 50)
+							context.lineTo(250, 350);
+							context.moveTo(350, 50)
+							context.lineTo(350, 350);
+								context.lineWidth = 5;
+								context.stroke();
+
+                        });
+
+                         layer.add(box);
+						 
+						 stage.add(layer);
+						 
+						    for (var n = 0; n < 5; n++) {
+
+
+
+                    // anonymous function to induce scope
+
+ var i = n;
+
+                    (function(){
+						 
+						 var layer1 = new Kinetic.Layer();
+						  var box1 = new Kinetic.Shape(function(){
+
+                          var context1 = this.getContext();
+
+						
+							   var topLeftCornerX = 100;
+    var topLeftCornerY = 50;
+    var width = 60;
+    var height = 60;
+ var rectY = (stage.height - height) / 2;
+    context1.beginPath();
+    context1.rect(topLeftCornerX, topLeftCornerY, width, height);
+    context1.fillStyle = "#8ED6FF";
+    context1.fill();
+   
+    context1.stroke();
+	  context1.font = "60pt Calibri";
+                    context1.fillStyle = "black";
+                    context1.fillText("     x    ", 25  , height+40 );
+
+                        });
+						 box1.draggable(true);
+                       box1.on("dblclick dbltap", function(){
+
+ box1.draggable(false);
+
+
+
+                        });
+						 layer1.add(box1);
+						 
+						 stage.add(layer1);
+						 
+						     })();
+
+                }
+					
+							    for (var l = 0; l < 5; l++) {
+
+
+
+                    // anonymous function to induce scope
+
+ var i = l;
+
+                    (function(){
+						 
+						 var layer2 = new Kinetic.Layer();
+						  var box2 = new Kinetic.Shape(function(){
+
+                          var context2 = this.getContext();
+
+						
+							   var CornerX = 450;
+    var CornerY = 50;
+    var width2 = 60;
+    var height2 = 60;
+
+    context2.beginPath();
+    context2.rect(CornerX, CornerY, width2, height2);
+    context2.fillStyle = "#ff6347";
+    context2.fill();
+   
+    context2.stroke();
+	  context2.font = "60pt Calibri";
+                    context2.fillStyle = "black";
+                    context2.fillText("     0    ", 370  , height2+45 );
+
+                        });
+						 box2.draggable(true);
+
+                        box2.on("dblclick dbltap", function(){
+
+ box2.draggable(false);
+
+
+
+                        });
+
+						 layer2.add(box2);
+						 
+						 stage.add(layer2);
+						 
+						     })();
+
+                }
+						
+						
+						
+						
+						
+                }
+				
+				
+				
+			
+		
+	
+            
+
+
+
+
+        </script>
+
+<div class="footerE">
+<footer>&#169;Copyright 2012 HTML5 ICE. <a style="color:blue" target="_top" href="thanks.html">With Thanks To</a></footer>
+
+</div>
+
+<script type="text/javascript" src="libraries/window.js"></script>
+
+ <script type="text/javascript" src="libraries/Center.js"></script>
+ 
+</body>
+</html>
